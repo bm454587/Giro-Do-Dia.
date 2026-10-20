@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07152f">
+<meta name="description" content="Giro do Dia — notícias, entretenimento, esportes, tecnologia e curiosidades.">
+<title>Giro do Dia — Sua informação é mais leve!</title>
+<style>
+:root{--navy:#07152f;--yellow:#ffd400;--pink:#f72585;--purple:#8b2cff;--blue:#168bff;--green:#10b981;--ink:#13213d;--muted:#64748b;--paper:#f5f7fb}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}a{color:inherit;text-decoration:none}button,input{font:inherit}
+header{background:var(--navy);color:white;position:sticky;top:0;z-index:5;box-shadow:0 3px 16px #0002}.top{max-width:1200px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:22px}.brand{font-weight:1000;line-height:.9;font-size:25px;letter-spacing:-1px;min-width:180px}.brand .crown{color:var(--yellow);font-size:28px}.brand span:last-child{color:var(--yellow)}.tagline{font-style:italic;color:#dce6ff;font-size:13px;max-width:135px}.nav{display:flex;gap:17px;align-items:center;flex:1}.nav button{background:none;border:0;color:#fff;cursor:pointer;padding:9px 10px;border-radius:8px;font-size:13px}.nav button.active,.nav button:hover{background:var(--yellow);color:#111}.search{width:170px;padding:10px 12px;border-radius:9px;border:1px solid #45516b;background:#142341;color:white}.menu{display:none;background:none;color:white;border:0;font-size:24px}
+main{max-width:1200px;margin:18px auto;padding:0 18px}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:12px}.hero{min-height:300px;border-radius:14px;overflow:hidden;color:white;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(90deg,#07152ff5,#07152f55),radial-gradient(circle at 78% 20%,#ff62b6,transparent 28%),linear-gradient(135deg,#113c9b,#08132d 60%,#8b2cff)}.pill{display:inline-block;width:max-content;border-radius:6px;padding:6px 9px;font-weight:800;font-size:11px;text-transform:uppercase;background:var(--pink);color:white}.hero h1{font-size:clamp(27px,4vw,43px);max-width:640px;line-height:1.08;margin:12px 0}.hero p{max-width:520px;color:#e8eeff;line-height:1.5}.btn{border:0;background:var(--yellow);color:#111;font-weight:800;padding:11px 15px;border-radius:8px;cursor:pointer;width:max-content}.side{display:grid;gap:12px}.side-card{border-radius:12px;background:var(--navy);color:white;padding:18px;display:flex;flex-direction:column;justify-content:end;min-height:92px;background-image:linear-gradient(90deg,#07152f,#07152f88),linear-gradient(135deg,#8b2cff,#168bff)}.side-card:nth-child(2){background-image:linear-gradient(90deg,#07152f,#07152f88),linear-gradient(135deg,#f72585,#ff8c42)}.side-card:nth-child(3){background-image:linear-gradient(90deg,#07152f,#07152f88),linear-gradient(135deg,#10b981,#168bff)}.side-card h3{margin:8px 0 0;font-size:17px}
+.categories{display:flex;gap:10px;overflow:auto;padding:18px 0 22px}.cat{flex:1;min-width:85px;border:0;background:white;border-radius:12px;padding:13px 8px;cursor:pointer;font-weight:700;color:var(--ink);box-shadow:0 2px 7px #14213d0b}.cat b{display:block;font-size:23px;margin-bottom:5px}.cat:hover,.cat.selected{outline:2px solid var(--yellow)}
+.content{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(240px,1fr);gap:20px}.section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;font-size:22px}.section-title:before{content:"";width:5px;height:23px;background:var(--yellow);border-radius:5px;margin-right:9px}.section-title span{margin-right:auto}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.article{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #14213d0b;border:1px solid #e5eaf2;cursor:pointer;transition:transform .15s}.article:hover{transform:translateY(-3px)}.thumb{height:130px;display:grid;place-items:center;font-size:45px;background:linear-gradient(135deg,#bde4ff,#e6d4ff)}.article:nth-child(2) .thumb{background:linear-gradient(135deg,#baf4e0,#d5e7ff)}.article:nth-child(3) .thumb{background:linear-gradient(135deg,#ffe5a8,#ffd2e7)}.article-body{padding:12px}.article h3{font-size:16px;line-height:1.25;margin:8px 0}.article p{font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 10px}.meta{font-size:11px;color:var(--muted)}.popular{background:white;border-radius:12px;padding:16px;border:1px solid #e5eaf2}.popular h2{margin:0 0 12px;font-size:20px}.popular-item{display:flex;gap:10px;padding:12px 0;border-top:1px solid #edf0f5;font-size:14px;font-weight:700;line-height:1.3}.rank{width:27px;height:27px;flex-shrink:0;display:grid;place-items:center;background:var(--purple);color:white;border-radius:50%}.entertainment{margin:24px 0}.entertainment .cards{grid-template-columns:repeat(4,minmax(0,1fr))}.entertainment .thumb{height:100px}footer{background:var(--navy);color:white;margin-top:25px;padding:25px 18px;text-align:center}footer strong{color:var(--yellow)}.disclaimer{font-size:12px;color:#9fb0d0;margin-top:8px}
+.modal{display:none;position:fixed;inset:0;background:#020817b8;z-index:10;padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-box{background:white;border-radius:15px;max-width:650px;width:100%;padding:24px;max-height:85vh;overflow:auto}.modal-box button{float:right;border:0;background:#edf0f5;border-radius:8px;padding:7px 11px;cursor:pointer}.modal-box h2{margin-top:18px}
+.empty{grid-column:1/-1;background:white;border-radius:12px;padding:24px;color:var(--muted)}
+@media(max-width:900px){.top{flex-wrap:wrap;gap:12px}.tagline{display:none}.nav{order:3;flex-basis:100%;overflow:auto}.search{margin-left:auto}.hero-grid{grid-template-columns:1fr}.side{grid-template-columns:repeat(3,1fr)}.side-card{min-height:110px}.content{grid-template-columns:1fr}.popular{order:2}.entertainment .cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.top{padding:12px}.brand{font-size:22px;min-width:145px}.search{width:120px}.nav{gap:4px}.nav button{white-space:nowrap;padding:8px;font-size:12px}main{padding:0 12px;margin-top:12px}.hero{padding:22px;min-height:290px}.side{grid-template-columns:1fr}.side-card{min-height:82px}.cards{grid-template-columns:1fr 1fr;gap:9px}.thumb{height:105px}.article-body{padding:10px}.article h3{font-size:14px}.article p{font-size:12px}.categories{gap:8px}.cat{min-width:78px;font-size:12px}.section-title{font-size:20px}.entertainment .cards{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="top">
+  <a class="brand" href="#" aria-label="Giro do Dia início"><span class="crown">♛</span> GIRO<br><span>DO DIA</span></a>
+  <div class="tagline">Tudo o que importa,<br>em um só lugar!</div>
+  <nav class="nav" aria-label="Categorias">
+    <button class="active" data-filter="Todas">Início</button><button data-filter="Notícias">Notícias</button><button data-filter="Entretenimento">Entretenimento</button><button data-filter="Esportes">Esportes</button><button data-filter="Tecnologia">Tecnologia</button><button data-filter="Curiosidades">Curiosidades</button>
+  </nav>
+  <input class="search" id="search" type="search" placeholder="Buscar..." aria-label="Buscar notícias">
+  <button class="menu" id="menu" aria-label="Mostrar categorias">☰</button>
+</div></header>
+<main>
+<section class="hero-grid">
+  <article class="hero">
+    <span class="pill">Portal de entretenimento</span>
+    <h1>Seu dia começa com o que está acontecendo.</h1>
+    <p>Notícias, famosos, esportes, tecnologia e curiosidades em um só lugar.</p>
+    <button class="btn" id="latestBtn">Explorar notícias →</button>
+  </article>
+  <div class="side">
+    <article class="side-card"><span class="pill">Música</span><h3>Novidades do mundo dos famosos</h3></article>
+    <article class="side-card"><span class="pill">Shows</span><h3>Agenda cultural e eventos</h3></article>
+    <article class="side-card"><span class="pill">Esportes</span><h3>Resultados e destaques da rodada</h3></article>
+  </div>
+</section>
+<section class="categories" aria-label="Atalhos de categorias">
+  <button class="cat selected" data-filter="Todas"><b>📰</b>Tudo</button>
+  <button class="cat" data-filter="Notícias"><b>🌎</b>Notícias</button>
+  <button class="cat" data-filter="Entretenimento"><b>🎤</b>Entretenimento</button>
+  <button class="cat" data-filter="Esportes"><b>⚽</b>Esportes</button>
+  <button class="cat" data-filter="Tecnologia"><b>📱</b>Tecnologia</button>
+  <button class="cat" data-filter="Curiosidades"><b>💡</b>Curiosidades</button>
+</section>
+<div class="content">
+  <section id="latest">
+    <h2 class="section-title"><span>Últimas notícias</span></h2>
+    <div class="cards" id="newsCards"></div>
+    <section class="entertainment"><h2 class="section-title"><span>Em destaque</span></h2><div class="cards" id="featuredCards"></div></section>
+  </section>
+  <aside class="popular"><h2>🔥 Mais lidas</h2><div id="popularList"></div><p class="disclaimer">As matérias exibidas nesta versão são exemplos demonstrativos.</p></aside>
+</div>
+</main>
+<footer><div class="brand"><span class="crown">♛</span> GIRO <span>DO DIA</span></div><p>Notícias, entretenimento, esportes, tecnologia e muito mais.</p><strong>Sua informação é mais leve!</strong><div class="disclaimer">Versão inicial demonstrativa — confira as informações antes de publicar matérias reais.</div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button id="closeModal" aria-label="Fechar">Fechar ✕</button><span class="pill" id="modalCategory">Categoria</span><h2 id="modalTitle"></h2><p id="modalText"></p><p class="disclaimer">Conteúdo de demonstração. Substitua por uma matéria verificada antes de publicar.</p></div></div>
+<script>
+const articles=[
+ {title:"O que acontece hoje: veja os principais assuntos do dia",category:"Notícias",emoji:"🌎",desc:"Um resumo demonstrativo para mostrar como as notícias aparecerão no portal.",body:"Esta é uma matéria de exemplo. Para publicar notícias reais, confirme os fatos em fontes confiáveis, informe a data e inclua links das fontes consultadas."},
+ {title:"Música e famosos: novidades que movimentam as redes",category:"Entretenimento",emoji:"🎤",desc:"Lançamentos, entrevistas e novidades do mundo do entretenimento.",body:"Esta página de exemplo pode receber notícias sobre música, televisão, artistas e cultura pop. Revise todas as informações antes de publicar."},
+ {title:"Esportes: confira os destaques e resultados",category:"Esportes",emoji:"⚽",desc:"Os principais lances, resultados e histórias do esporte.",body:"Use esta área para publicar resultados e notícias esportivas confirmadas, com data, competição e fonte."},
+ {title:"Tecnologia no dia a dia: novidades explicadas sem complicação",category:"Tecnologia",emoji:"📱",desc:"Aplicativos, internet e ferramentas digitais em linguagem simples.",body:"Conteúdos de tecnologia devem ser conferidos em fontes confiáveis e atualizados quando houver mudanças."},
+ {title:"Curiosidades que dão vontade de compartilhar",category:"Curiosidades",emoji:"💡",desc:"Fatos interessantes explicados de forma leve e fácil.",body:"Antes de publicar uma curiosidade, confirme que ela é verdadeira e evite espalhar informações sem comprovação."},
+ {title:"Agenda cultural: como encontrar eventos na sua região",category:"Notícias",emoji:"🎟️",desc:"Dicas para acompanhar shows, festas e atividades culturais.",body:"Ao publicar eventos, confirme local, data, horário, preço e canais oficiais de informação."}
+];
+let activeFilter="Todas";
+const newsCards=document.querySelector("#newsCards"), featuredCards=document.querySelector("#featuredCards");
+function card(a){return `<article class="article" tabindex="0" role="button" data-title="${a.title.replaceAll('"','&quot;')}" data-category="${a.category}"><div class="thumb" aria-hidden="true">${a.emoji}</div><div class="article-body"><span class="pill">${a.category}</span><h3>${a.title}</h3><p>${a.desc}</p><span class="meta">Matéria demonstrativa · Giro do Dia</span></div></article>`}
+function render(){
+ const q=document.querySelector("#search").value.trim().toLocaleLowerCase("pt-BR");
+ const filtered=articles.filter(a=>(activeFilter==="Todas"||a.category===activeFilter)&&(`${a.title} ${a.desc} ${a.category}`).toLocaleLowerCase("pt-BR").includes(q));
+ newsCards.innerHTML=filtered.length?filtered.map(card).join(""):'<div class="empty">Nenhuma matéria encontrada. Tente outra busca ou categoria.</div>';
+ featuredCards.innerHTML=articles.filter(a=>a.category==="Entretenimento"||a.category==="Curiosidades").map(card).join("");
+ document.querySelector("#popularList").innerHTML=articles.slice(0,5).map((a,i)=>`<div class="popular-item"><span class="rank">${i+1}</span><span>${a.title}</span></div>`).join("");
+ document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.closest(".nav")?b.dataset.filter===activeFilter:false));
+ document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("selected",b.dataset.filter===activeFilter));
+}
+function openArticle(title){const a=articles.find(x=>x.title===title);if(!a)return;document.querySelector("#modalCategory").textContent=a.category;document.querySelector("#modalTitle").textContent=a.title;document.querySelector("#modalText").textContent=a.body;document.querySelector("#modal").classList.add("open")}
+document.addEventListener("click",e=>{const f=e.target.closest("[data-filter]");if(f){activeFilter=f.dataset.filter;render()}const a=e.target.closest(".article");if(a)openArticle(a.dataset.title)});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches(".article")){e.preventDefault();openArticle(e.target.dataset.title)}if(e.key==="Escape")document.querySelector("#modal").classList.remove("open")});
+document.querySelector("#search").addEventListener("input",render);
+document.querySelector("#closeModal").addEventListener("click",()=>document.querySelector("#modal").classList.remove("open"));
+document.querySelector("#modal").addEventListener("click",e=>{if(e.target.id==="modal")e.currentTarget.classList.remove("open")});
+document.querySelector("#latestBtn").addEventListener("click",()=>document.querySelector("#latest").scrollIntoView({behavior:"smooth"}));
+document.querySelector("#menu").addEventListener("click",()=>document.querySelector(".nav").scrollIntoView({behavior:"smooth",block:"center"}));
+render();
+</script>
+</body>
+</html>
